@@ -1,5 +1,4 @@
-let AppID = 'ShiniesJS';
-function pay(Customer, Key, Receiver, Amount) {
+function pay(Customer, Key, Receiver, Amount, AppID) {
     fetch(`https://shinies.space/pay-with-key?user=${Customer}&key=${Key}&receiver=${Receiver}&amount=${Amount}&appid=${AppID}`, {
         method: 'POST'
     })
@@ -7,7 +6,7 @@ function pay(Customer, Key, Receiver, Amount) {
     .then(d=>console.log(d)); // Plain-text success or error message for the customer.
 };
 
-function request(Customer, Key, Receiver, Amount) {
+function request(Customer, Key, Receiver, Amount, AppID) {
     fetch(`https://shinies.space/request-with-key?user=${Customer}&key=${Key}&torequest=${Receiver}&amount=${Amount}&appid=${AppID}`, {
         method: 'POST'
     })
